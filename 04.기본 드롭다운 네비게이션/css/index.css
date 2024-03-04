@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+/* 사용 css
+hover, display */
+
+body {
+  color: #222;
+  line-height: 1.5em;
+}
+
+a {
+  color: #222;
+  text-decoration: none;
+}
+
+.dropdown {
+  width: 200px;
+}
+
+.dropdown-btn {
+  /* inherit: 부모 요소의 크기를 상속받음 */
+  width: inherit;
+  /* 버튼 높이조절은 padding 이 더 좋음 */
+  padding: 10px;
+  font-size: 18px;
+  background-color: yellowgreen;
+  border: none;
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+}
+.dropdown-submenu {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.17);
+  width: inherit;
+  display: none;
+}
+.dropdown-submenu a {
+  display: block;
+  padding: 7px;
+  text-align: center;
+}
+
+.dropdown-submenu a:hover {
+  background-color: #eee;
+}
+
+/* hover 다음에 이어지면 뒤에 있는 요소 디자인 변경이 됨 (하지만 자식요소여야됨)*/
+.dropdown:hover .dropdown-submenu{
+  display: block;
+}

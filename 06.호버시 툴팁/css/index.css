@@ -1,0 +1,64 @@
+@charset "UTF-8";
+
+/* 사용 css
+hover, position, opacity, before */
+
+body {
+  margin: 0;
+}
+
+a {
+  color: #222;
+  text-decoration: none;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.icon {
+  width: 125px;
+  height: 125px;
+  margin: 10px;
+  position: relative;
+}
+
+.icon span {
+  /* position: absolute 를 주면 inline-block이 됨 */
+  position: absolute;
+  background-color: black;
+  color: #fff;
+  width: 300px;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  /* display: none; */
+  opacity: 0;
+  transition: 0.5s;
+  /* 자릿값은 있지만 존재를 사라지게 함 */
+  /* pointer-events:none도 사용 가능 */
+  visibility: hidden;
+}
+
+.icon span:after {
+  content: '';
+  position: absolute;
+  background-color: black;
+  width: 10px;
+  height: 10px;
+  transform: rotate(45deg) translateX(-50%);
+  bottom: -5px;
+  left: 50%;
+}
+
+.icon:hover span {
+  /* display: block; */
+  opacity: 1;
+  visibility: visible;
+}

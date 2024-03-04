@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+/* 사용 css
+hover, display, position, opacity */
+
+a {
+  color: #222;
+  text-decoration: none;
+}
+
+.items {
+  text-align: center;
+}
+
+.item {
+  display: inline-block;
+  width: 300px;
+  height: 300px;
+  position: relative;
+  border: 1px solid #ddd;
+  margin: 10px;
+}
+
+.caption {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  color: #fff;
+  padding: 20px;
+  /* padding 으로 늘어난 사이즈를 돌려줌 */
+  box-sizing: border-box;
+  padding-top: 40px;
+  /* display:none 해주면 트랜지션을 주지 못함 */
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.caption a {
+  color: #fff;
+  background-color: teal;
+  padding: 7px;
+  border-radius: 3px;
+}
+
+.caption a:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.item img {
+  width: 300px;
+  height: 300px;
+}
+
+.item:hover .caption {
+  opacity: 1;
+}
