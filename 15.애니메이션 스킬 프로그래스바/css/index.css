@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+/* Google Web Font */
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+/* 사용 css
+수직중앙, 수평중앙 정렬, float, gradient, keyframe, animation, first-child, last-child, 인라인 스타일 사용법 */
+
+body {
+  font-family: 'Raleway', sans-serif;
+  margin: 0;
+}
+
+
+.skill-progress {
+  width: 500px;
+  padding: 20px;
+  background-color: #333;
+  border-radius: 10px;
+  color: #fff;
+  box-shadow: 0 20px 50px #0000001c;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.skill-progress h1 {
+  text-align: center;
+}
+
+.item p {
+  /* border: 1px solid #fff; */
+  /* 자식요소에 float 값을 주면 부모요소의 높이값을 잃기 때문에 overflow:hidden 을 해준다. */
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+.item p span:nth-child(1) {
+  float: left;
+}
+
+.item p span:nth-child(2) {
+  float: right;
+}
+
+.progress {
+  border: 1px solid #6cd4c4;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.progress-level {
+  height: 10px;
+  background: linear-gradient(90deg, crimson, gold);
+  animation: ani;
+  animation-duration: 1s;
+}
+
+/* 0으로 맞춰놓으면 각각의 width에서 멈추므로 0만 만들어줘도 됨 */
+@keyframes ani {
+  0% {
+    width: 0;
+  }
+}

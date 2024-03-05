@@ -1,0 +1,75 @@
+@charset "UTF-8";
+
+/* 사용 css
+hover, calc함수, 가상클래스 nth-child, nth-of-type, background-position, before, afterm input, label, id */
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #222;
+}
+
+a {
+  color: #222;
+  text-decoration: none;
+}
+
+.item {
+  /* border: 1px solid red; */
+  width: 300px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+/* 속성 선택자 */
+.item input[type=text] ,
+.item input[type=email] ,
+.item input[type=tel] {
+  border: 1px solid lightgray;
+  height: 40px;
+  width: inherit;
+  border-radius: 5px;
+  padding: 10px;
+  box-sizing: border-box;
+  padding-left: 50px;
+  outline: none;
+  transition: 0.3s;
+}
+
+
+.item .fa-solid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: gray;
+  color: #fff;
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 5px 0 0 5px;
+}
+
+.item input[type=text]:focus ,
+.item input[type=email]:focus ,
+.item input[type=tel]:focus {
+  border: 1px solid dodgerblue;
+  box-shadow: 0 0 5px dodgerblue;
+}
+
+/* +는 인접 선택자<단, 바로 아래있는 요소만 가능
+    ~는 형제선택자> */
+.item input[type=text]:focus + .fa-solid,
+.item input[type=email]:focus + .fa-solid ,
+.item input[type=tel]:focus + .fa-solid{
+  background-color: dodgerblue
+}
+
+/* .item 의 .input을 focus 했을 때 가지고 있는 placeholder는? */
+.item input:focus::placeholder {
+  visibility: hidden;
+}
