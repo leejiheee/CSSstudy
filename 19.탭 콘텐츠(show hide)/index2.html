@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>탭 콘텐츠(show hide)</title>
+  <link rel="stylesheet" href="css/index2.css">
+</head>
+<body>
+  <div class="tab-inner">
+    <!-- 라디오버튼은 동일한 name값을 가지고 있어야 한다 반드시!! -->
+    <!-- id는 btn label이랑 연결시켜줘야된다! -->
+    <input type="radio" name="tabmenu" id="tab1" checked>
+    <input type="radio" name="tabmenu" id="tab2">
+    <input type="radio" name="tabmenu" id="tab3">
+    <div class="content slide1">
+      <a href="#none1"><img src="images/slide-01.jpg"></a>
+    </div>
+    <div class="content slide2">
+      <a href="#none2"><img src="images/slide-02.jpg"></a>
+    </div>
+    <div class="content slide3">
+      <a href="#none3"><img src="images/slide-03.jpg"></a>
+    </div>
+    <div class="btn">
+      <label for="tab1"></label>
+      <label for="tab2"></label>
+      <label for="tab3"></label>
+    </div>
+  </div>
+</body>
+</html>

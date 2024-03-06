@@ -1,0 +1,82 @@
+@charset "UTF-8";
+
+/* Google Web Font */
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+body {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300px;
+  line-height: 1.5em;
+  margin: 0;
+}
+
+input[name=tabmenu] {
+  display: none;
+}
+.tabs {
+  overflow: hidden;
+  position: relative;
+  /* position을 주면서 높이값을 잃었으니 자식요소도 함께 붕 뜨게되고 그럼 전부 overflow hidden 된다. 그러니까 height 값을 주면 된다. */
+  height: 100vh;
+}
+.items {
+  height: 100vh;
+  width: 300%;
+  transition: 0.5s;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.items div {
+  height: 100vh;
+  float: left;
+  /* width 가 300%인 부모태그를 가지고 있으므로 100% 라고 하면 300%의 100%가 된다. 그럼 안되니까 100%를 3으로 나눈 33.333...% 로 하면 된다 */
+  width: 33.3333%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.items div:nth-child(1) {
+  background-color: teal;
+}
+.items div:nth-child(2) {
+  background-color: dodgerblue;
+}
+.items div:nth-child(3) {
+  background-color: yellowgreen;
+}
+.items div h1 {
+  font-size: 80px;
+  font-weight: normal;
+}
+
+.btn {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+}
+.btn label {
+  display: inline-block;
+  height: 5px;
+  width: 50px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+input[id=tab1]:checked ~.tabs .items {
+  left: 0;
+}
+input[id=tab2]:checked ~.tabs .items {
+  left: -100%;
+}
+input[id=tab3]:checked ~.tabs .items {
+  left: -200%;
+}
+
+input[id=tab1]:checked ~ .btn label[for=tab1],
+input[id=tab2]:checked ~ .btn label[for=tab2],
+input[id=tab3]:checked ~ .btn label[for=tab3] {
+  background-color: #000;
+}

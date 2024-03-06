@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+/* 사용 css
+input, label, 인접선택자, 형제선택자, 속성선택자:checkd, opacity, transform, nth-child, position */
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.tab-inner {
+  /* width는 300인데 height는 350인 이유는 버튼 자리까지 생각했기 때문! */
+  width: 300px;
+  height: 350px;
+  position: relative;
+}
+input[name=tabmenu] {
+  display: none;
+}
+.content {
+  /* display: none; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  /* opacity만 설정하면 클릭했을 때 맨 위에있는 이미지 링크만 선택된다.
+  그래서 존재 자체를 사라지게 해준다. */
+  visibility: hidden;
+  transition: 0.5s;
+}
+.btn {
+  /* position:absolute 해주면서 display: inline-block으로 됨, 그러므로 가로길이를 100%로 늘려주면서 text-align을 center 해줘서 중앙에 맞춰줌 */
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  bottom: 10px;
+}
+.btn label {
+  background-color: lightgray;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+input[id=tab1]:checked ~ .slide1,
+input[id=tab2]:checked ~ .slide2,
+input[id=tab3]:checked ~ .slide3 {
+  /* display: block; */
+  visibility: visible;
+  opacity: 1;
+}
+
+input[id=tab1]:checked ~ .btn label[for=tab1],
+input[id=tab2]:checked ~ .btn label[for=tab2],
+input[id=tab3]:checked ~ .btn label[for=tab3] {
+  background-color: crimson;
+}
