@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+/* Google Web Fonts CDN */
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700,900&display=swap');
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-weight: 300;
+}
+
+form input[type=checkbox] {
+  display: none;
+}
+form label {
+  display: block;
+}
+form label:before {
+  content: '\f00c';
+  font-family: fontawesome;
+  border: 1px solid #333;
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  margin-right: 5px;
+  font-size: 13px;
+  vertical-align: middle;
+  display: inline-block;
+  text-align: center;
+  line-height: 16px;
+  /* 투명 */
+  color: transparent;
+  transition: 0.2s;
+}
+
+form input[type=checkbox]:checked + label:before {
+  background-color: crimson;
+  color: #fff;
+  /* border-color: transparent 해줘도 됨 */
+  border: 1px solid crimson;
+}
+
+/* active 마우스를 누르는 순간부터 떼는 순간까지 */
+form input[type=checkbox] + label:active:before {
+  transform: scale(0);
+}

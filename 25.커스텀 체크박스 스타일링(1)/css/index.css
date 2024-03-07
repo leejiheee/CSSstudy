@@ -1,0 +1,67 @@
+@charset "UTF-8";
+
+/* Google Web Fonts CDN */
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700,900&display=swap');
+
+/* 사용 css
+input, label, 인접선택자, 속성선택자, :checked 가상클래스 */
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.custom input[type=checkbox] {
+  display: none;
+}
+
+.custom label {
+  cursor: pointer;
+}
+
+.custom label em {
+  /* border: 1px solid red; */
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  /* 인라인요소에 수직정렬을 지정하는 속성, middle은 부모의 중앙에 위치*/
+  vertical-align: middle;
+  margin-right: 5px;
+  background: url(../images/checkbox-02.png) no-repeat;
+  background-position: left center;
+}
+
+.custom input[type=checkbox]:checked +label em{
+  background-position: right center;
+}
+
+.grade input[type=radio] {
+  display: none;
+}
+
+.grade label {
+  cursor: pointer;
+}
+
+.grade label em {
+  /* border: 1px solid red; */
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+  margin-right: 5px;
+  background: url(../images/radio-01.png) no-repeat;
+  background-position: left center;
+}
+
+.grade input[type=radio]:checked + label em {
+  background-position: right center;
+}
+
+.grade input[type=radio]:checked + label {
+  color: crimson;
+}

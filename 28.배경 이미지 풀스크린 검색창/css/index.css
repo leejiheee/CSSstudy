@@ -1,0 +1,77 @@
+@charset "UTF-8";
+
+/* 사용 css
+모든 background 속성, before, gradient, placeholder, nagative margin */
+
+/* Google Web Font */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+
+body {
+  /* body는 제일 상위에 있으니까 굳이 position relative 안줘도 됨 */
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.5em;
+  margin: 0;
+  font-weight: 300;
+  /* background-image: url(../images/snow-photo.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-attachment: background-image를 알맞게 채워주는 역할 */
+  background: url(../images/snow-photo.jpg) no-repeat center center fixed;
+}
+
+body:before {
+  content: '';
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.65);
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.search {
+  /* border: 1px solid #fff; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.search h1 {
+  color: #fff;
+  text-align: center;
+  font-weight: normal;
+  margin-bottom: 30px;
+  font-size: 36px;
+}
+.search input[type=text],
+.search input[type=submit] {
+  padding: 15px;
+  border: none;
+  box-sizing: border-box;
+  outline: none;
+}
+.search input[type=text] {
+  width: 300px;
+/* nagative margin */
+  margin-right: -6px;
+  border-radius: 40px 0 0 40px;
+  padding-left: 40px;
+}
+.search input[type=submit] {
+  width: 150px;
+  border-radius: 0 40px 40px 0;
+  cursor: pointer;
+  background-color: orange;
+  color: #fff;
+}
+.search input[type=submit]:hover {
+  background-color: darkgoldenrod;
+}
+/* css3부터 생긴 속성은 반드시 :: 이렇게 두개를 붙여준다. */
+.search input[type=text]::placeholder {
+  font-size: 20px;
+  font-style: italic;
+
+}
